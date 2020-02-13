@@ -10,11 +10,11 @@ window.addEventListener('load', function () {
 });
 
 function renderInitialData(data) {
-  console.log(data);
 
   /* Loop on the elements provided with the API*/
-  for(let i = 0; i < data.length; i++){
-    let el = createHTMLElement(data[i]);
+  for(let i = 0; i < data.results.length; i++){
+    let el = createHTMLElement(data.results[i]);
+
     body.append(el);
   }
 }
@@ -23,7 +23,7 @@ function createHTMLElement(element) {
   let divParent = document.createElement('div');
   let hTitle = document.createElement('h1');
 
-  let txtTitle = document.createTextNode(element.title);
+  let txtTitle = document.createTextNode(element.name);
 
   hTitle.appendChild(txtTitle);
   divParent.addEventListener('click', () => onClickJob(element.id))

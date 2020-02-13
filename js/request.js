@@ -1,8 +1,9 @@
-let API_LINK = "https://jobs.github.com/positions.json?lat=37.3229978&long=-122.0321823";
+let API_LINK = "https://api.openaq.org/v1/cities?country=FR";
 
 function getInitialData(callback) {
   // Set up our HTTP request
   let xhr = new XMLHttpRequest();
+
 
   xhr.onload = function () {
     // Process our return data
@@ -18,6 +19,8 @@ function getInitialData(callback) {
 // Create and send a GET request
 // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
 // The second argument is the endpoint URL
-  xhr.open('GET', API_LINK);
+  xhr.open('GET', API_LINK, true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+
   xhr.send();
 }
