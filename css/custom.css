@@ -14,7 +14,18 @@
   align-items: center;
   justify-content: center;
 }
-.right-icon { grid-area: right-icon; }
+.right-icon {
+  grid-area: right-icon;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right-icon img {
+  fill: white;
+  color: white;
+  height: 25px;
+}
 
 .content {
   overflow-y: scroll;
@@ -24,4 +35,71 @@
 
 .job-item {
 
+}
+
+.full-height-absolute {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: lightgray;
+  z-index: 10;
+}
+
+#modal {
+  transition: bottom 0.5s ease-in-out;
+  bottom: -100vh;
+  left: 0;
+}
+
+#menu {
+  transition: left 0.5s ease-in-out;
+  bottom: 0;
+  left: -70vw;
+  width: 70vw;
+}
+
+#menu ul li {
+  list-style-type:none;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 30px;
+}
+#menu ul li:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 10%;
+  background: black;
+}
+
+.modal-opened {
+  bottom: 0 !important;
+}
+
+.menu-opened {
+  left: 0 !important;
+}
+
+.city-item {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  padding: 20px 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.city-item:hover, .city-item:active {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+}
+
+.city-item h1 {
+  margin: 0;
+  font-size: 1em;
+}
+
+#menu-icon {
+  transition: transform 0.5s ease-in-out;
+}
+
+#menu-icon.opened {
+  transform: rotate(90deg);
 }

@@ -14,7 +14,6 @@ function renderInitialData(data) {
   /* Loop on the elements provided with the API*/
   for(let i = 0; i < data.results.length; i++){
     let el = createHTMLElement(data.results[i]);
-
     body.append(el);
   }
 }
@@ -26,21 +25,44 @@ function createHTMLElement(element) {
   let txtTitle = document.createTextNode(element.name);
 
   hTitle.appendChild(txtTitle);
-  divParent.addEventListener('click', () => onClickJob(element.id))
+  divParent.addEventListener('click', () => onClickCity(element.name))
   divParent.appendChild(hTitle);
-  divParent.classList.add('job-item');
+  divParent.classList.add('city-item');
   return divParent;
 }
 
-function onClickJob(jobId){
-  // TODO:
-  // Ouvrir une modal
-  // Ajouter les éléments du job à la modal
-  alert(jobId);
+async function onClickCity(cityName){
+  toggleModal('modal');
+
+  let cityData = await getCityData(cityName);
+
+  renderModalData({name: cityName, data: cityData.results})
 }
 
+function renderModalData({name, data}){
+  let title = document.getElementById('modal-title');
+  console.log("data region", data);
+  title.innerText = name;
+
+
+}
 
 function openMenu(){
-  // TODO:
-  // Ajouter une classe "active au menu"
+  toggleMenu('menu')
+}
+
+function toggleModal(modalId){
+  let modal = document.getElementById(modalId);
+  modal.classList.toggle('modal-opened')
+}
+function toggleMenu(menuId){
+  let modal = document.getElementById(menuId);
+  modal.classList.toggle('menu-opened');
+
+  let menuIcon = document.getElementById('menu-icon');
+  menuIcon.classList.toggle('opened')
+}
+
+function closeModal(){
+
 }

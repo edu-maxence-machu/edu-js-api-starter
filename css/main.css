@@ -20,6 +20,7 @@ html {
 
 body {
   height: 100vh;
+  overflow: hidden;
 }
 
 /*
@@ -268,3 +269,10 @@ textarea {
   }
 }
 
+a.no-style {
+  text-decoration: none;
+  color: inherit;
+}
+a.no-style:active, a.no-style:hover {
+  opacity: 0.5;
+}

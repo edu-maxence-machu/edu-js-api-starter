@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>API GET | EX</title>
+  <title>AirQuality</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,13 +21,40 @@
 
   <div class="header">
     <div class="left-icon"></div>
-    <div class="title">Jobs</div>
-    <div class="right-icon" onclick="openMenu()">MENU</div>
+    <div class="title">AirQuality</div>
+    <div class="right-icon" onclick="openMenu()">
+      <img src="img/menu.svg" id="menu-icon" alt="">
+    </div>
   </div>
 
   <div class="content" id="content">
 
   </div>
+
+  <div id="modal" class="full-height-absolute">
+    <div class="header">
+      <div class="left-icon"></div>
+      <div class="title" id="modal-title"></div>
+      <div class="right-icon" onclick="toggleModal('modal')">
+        <img src="img/close.svg" alt="">
+      </div>
+
+    </div>
+  </div>
+
+  <div id="menu" class="full-height-absolute">
+    <ul>
+      <li>
+        <a href="" class="no-style">Pays</a></li>
+      <li>
+        <a href="" class="no-style">Régions</a>
+      </li>
+      <li>
+        <a href="" class="no-style">Villes</a>
+      </li>
+    </ul>
+  </div>
+
   <script src="js/request.js"></script>
   <script src="js/main.js"></script>
 </body>
