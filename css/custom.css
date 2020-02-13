@@ -1,0 +1,27 @@
+.header {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 70px;
+  grid-template-areas: "left-icon title right-icon";
+
+  background-color: cadetblue;
+}
+
+.left-icon { grid-area: left-icon; }
+.title {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right-icon { grid-area: right-icon; }
+
+.content {
+  overflow-y: scroll;
+  height: calc(100vh - 70px);
+  padding: 0px 10px;
+}
+
+.job-item {
+
+}
