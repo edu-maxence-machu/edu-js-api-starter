@@ -7,7 +7,12 @@
   background-color: cadetblue;
 }
 
-.left-icon { grid-area: left-icon; }
+.left-icon {
+  grid-area: left-icon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .title {
   grid-area: title;
   display: flex;

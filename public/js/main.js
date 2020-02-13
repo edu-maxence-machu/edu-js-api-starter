@@ -2,11 +2,12 @@
 
 let body = document.getElementById('content');
 
-window.addEventListener('load', function () {
+window.addEventListener('load', async function () {
   console.log('Page fully loaded');
   console.log('We can run javascript now');
 
-  getInitialData(renderInitialData);
+  let initialData = await getInitialData();
+  renderInitialData(initialData)
 });
 
 function renderInitialData(data) {
@@ -43,8 +44,6 @@ function renderModalData({name, data}){
   let title = document.getElementById('modal-title');
   console.log("data region", data);
   title.innerText = name;
-
-
 }
 
 function openMenu(){
@@ -61,8 +60,4 @@ function toggleMenu(menuId){
 
   let menuIcon = document.getElementById('menu-icon');
   menuIcon.classList.toggle('opened')
-}
-
-function closeModal(){
-
 }
