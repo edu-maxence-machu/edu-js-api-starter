@@ -7,14 +7,14 @@ const DATA_CACHE_NAME = 'data-cache-v1';
 // Ajoutez ici les fichiers de votre application à mettre en cache
 const FILES_TO_CACHE = [
   '/',
-  '/index.html',
-  '/img/close.svg',
-  '/img/menu.svg',
-  '/js/main.js',
-  '/js/request.js',
-  '/css/custom.css',
-  '/css/main.css',
-  '/css/normalize.css'
+  'index.html',
+  'img/close.svg',
+  'img/menu.svg',
+  'js/main.js',
+  'js/request.js',
+  'css/custom.css',
+  'css/main.css',
+  'css/normalize.css'
 ];
 
 /*
